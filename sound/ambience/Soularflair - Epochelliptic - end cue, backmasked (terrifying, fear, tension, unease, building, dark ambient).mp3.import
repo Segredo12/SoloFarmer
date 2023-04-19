@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://beqtxcodq547t"
+path="res://.godot/imported/Soularflair - Epochelliptic - end cue, backmasked (terrifying, fear, tension, unease, building, dark ambient).mp3-5b6c81d8c068384bb5237206668e6b32.mp3str"
+
+[deps]
+
+source_file="res://sound/ambience/Soularflair - Epochelliptic - end cue, backmasked (terrifying, fear, tension, unease, building, dark ambient).mp3"
+dest_files=["res://.godot/imported/Soularflair - Epochelliptic - end cue, backmasked (terrifying, fear, tension, unease, building, dark ambient).mp3-5b6c81d8c068384bb5237206668e6b32.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bys8m55s11t2t"
+path="res://.godot/imported/Alan Špiljak - Silence the world.mp3-2559ef7a6cf5eb9b2ccb3717968dec7f.mp3str"
+
+[deps]
+
+source_file="res://sound/ambience/Alan Špiljak - Silence the world.mp3"
+dest_files=["res://.godot/imported/Alan Špiljak - Silence the world.mp3-2559ef7a6cf5eb9b2ccb3717968dec7f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

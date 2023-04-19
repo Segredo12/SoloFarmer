@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bqvrqf5fjuwe"]
+[gd_scene load_steps=16 format=3 uid="uid://bqvrqf5fjuwe"]
 
 [ext_resource type="FontFile" uid="uid://cmy4wfubc27og" path="res://fonts/AlexBrush-Regular.ttf" id="1_hlcpj"]
 [ext_resource type="Texture2D" uid="uid://csrbw7yb6tflv" path="res://assets/main_menu/main_menu_container.png" id="1_tqnjs"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ccao3uamoys4d" path="res://assets/birds/MiniBird_5.png" id="6_e4t1m"]
 [ext_resource type="Texture2D" uid="uid://bqdldtnrstr2x" path="res://assets/birds/MiniBird_6.png" id="7_ih160"]
 [ext_resource type="Texture2D" uid="uid://bfvg221wtl8b2" path="res://assets/birds/MiniBird_7.png" id="8_lk8qu"]
+[ext_resource type="AudioStream" uid="uid://bys8m55s11t2t" path="res://sound/ambience/Alan Špiljak - Silence the world.mp3" id="9_2yfjj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bgt8s"]
 font = ExtResource("1_hlcpj")
@@ -59,6 +60,12 @@ anchors_preset = 0
 offset_right = 800.0
 offset_bottom = 600.0
 script = ExtResource("1_wwb02")
+
+[node name="backgroud" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(408, 298)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_d5bbt")
 
 [node name="game_title" type="Label" parent="."]
 z_index = 1
@@ -159,11 +166,118 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_6v7vh")
 theme_override_styles/focus = SubResource("StyleBoxFlat_oh33w")
 text = "Quit"
 
-[node name="backgroud" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(408, 298)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_d5bbt")
+[node name="options_container" type="Control" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -313.0
+offset_top = -170.0
+offset_right = 288.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background_sprite" type="Sprite2D" parent="options_container"]
+position = Vector2(304, 163.5)
+scale = Vector2(2.576, 0.8425)
+texture = ExtResource("1_tqnjs")
+
+[node name="save_options_btn" type="Button" parent="options_container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -194.5
+offset_top = -85.0
+offset_right = -101.5
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_ny0tq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pxk7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6v7vh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oh33w")
+text = "Save"
+
+[node name="cancel_options_btn" type="Button" parent="options_container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 123.5
+offset_top = 255.0
+offset_right = 216.5
+offset_bottom = 286.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_ny0tq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pxk7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6v7vh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oh33w")
+text = "Cancel"
+
+[node name="pt_option_lang_btn" type="Button" parent="options_container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.5
+offset_top = -278.0
+offset_right = -3.5
+offset_bottom = -247.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_ny0tq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pxk7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6v7vh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oh33w")
+toggle_mode = true
+text = "PT"
+
+[node name="en_option_lang_btn" type="Button" parent="options_container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 60.5
+offset_top = -278.0
+offset_right = 124.5
+offset_bottom = -247.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_ny0tq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pxk7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6v7vh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oh33w")
+toggle_mode = true
+text = "EN"
+
+[node name="language_label" type="Label" parent="options_container"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 62.0
+offset_right = 233.0
+offset_bottom = 94.0
+text = "Language:"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="bird01" type="AnimatedSprite2D" parent="."]
 position = Vector2(-56, 136)
@@ -186,7 +300,39 @@ metadata/_edit_group_ = true
 wait_time = 0.05
 autostart = true
 
+[node name="bird_spawn_timer_01" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="bird_spawn_timer_02" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="spawn_bird01" type="Marker2D" parent="."]
+position = Vector2(-59, 140)
+
+[node name="spawn_bird02" type="Marker2D" parent="."]
+position = Vector2(857, 245)
+
+[node name="background_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_2yfjj")
+autoplay = true
+
 [connection signal="pressed" from="buttons_container/new_game_btn" to="." method="_on_new_game_btn_pressed"]
 [connection signal="pressed" from="buttons_container/option_btn" to="." method="_on_option_btn_pressed"]
 [connection signal="pressed" from="buttons_container/quit_game_btn" to="." method="_on_quit_game_btn_pressed"]
+[connection signal="pressed" from="options_container/save_options_btn" to="." method="_on_new_game_btn_pressed"]
+[connection signal="pressed" from="options_container/save_options_btn" to="." method="_on_save_options_btn_pressed"]
+[connection signal="pressed" from="options_container/cancel_options_btn" to="." method="_on_new_game_btn_pressed"]
+[connection signal="pressed" from="options_container/pt_option_lang_btn" to="." method="_on_new_game_btn_pressed"]
+[connection signal="ready" from="options_container/pt_option_lang_btn" to="." method="_on_pt_option_lang_btn_ready"]
+[connection signal="toggled" from="options_container/pt_option_lang_btn" to="." method="_on_pt_option_lang_btn_toggled"]
+[connection signal="pressed" from="options_container/en_option_lang_btn" to="." method="_on_new_game_btn_pressed"]
+[connection signal="ready" from="options_container/en_option_lang_btn" to="." method="_on_en_option_lang_btn_ready"]
+[connection signal="toggled" from="options_container/en_option_lang_btn" to="." method="_on_en_option_lang_btn_toggled"]
 [connection signal="timeout" from="bird_timer" to="." method="_on_bird_timer_timeout"]
+[connection signal="timeout" from="bird_spawn_timer_01" to="." method="_on_bird_timer_timeout"]
+[connection signal="timeout" from="bird_spawn_timer_01" to="." method="_on_bird_spawn_timer_01_timeout"]
+[connection signal="timeout" from="bird_spawn_timer_02" to="." method="_on_bird_spawn_timer_02_timeout"]
+[connection signal="timeout" from="bird_spawn_timer_02" to="." method="_on_bird_timer_timeout"]
+[connection signal="finished" from="background_sound" to="." method="_on_background_sound_finished"]
