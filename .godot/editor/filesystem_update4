@@ -1,2 +1,4 @@
 res://scenes/main_menu/main_menu.tscn
 res://scenes/main_menu/script/main_menu_script.gd
+res://files/config.cfg
+res://files/classes/game_configurations.gd
