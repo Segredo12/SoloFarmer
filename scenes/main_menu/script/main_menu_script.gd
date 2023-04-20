@@ -16,12 +16,15 @@ func _ready():
 	_on_fullscreen_option_btn_ready();
 	# Hides Options_container:
 	$options_container.hide();
+	# Hides Start_game_container:
+	$start_game_container.hide();
 	# Starts Background animation:
 	$bird01.play(); # Starts Bird01 animation;
 	$bird02.play(); # Starts Bird02 animation;
 	# Now we start the Labels using game_lang variable:
 	buttons_container_translation();
 	options_container_translation();
+	start_game_container_translation();
 	# We block music if isMusicBlocked as TRUE;
 	if game_configurations.get_setting("audio", "isMusicBlocked"):
 		$background_sound.stop();
@@ -33,6 +36,7 @@ func _process(_delta):
 		# Language was changed on configuration:
 		buttons_container_translation();
 		options_container_translation();
+		start_game_container_translation();
 		isLangChanged = false;
 
 # Translations:
@@ -73,7 +77,16 @@ func fullscreen_configuration_translation():
 			$options_container/fullscreen_option_btn.text = "Ecrã Inteiro";
 		elif !game_configurations.get_setting("screen", "isFullscreen"):
 			$options_container/fullscreen_option_btn.text = "Janela";
-
+# Translation:
+func start_game_container_translation():
+	if game_configurations.get_setting("language", "game_lang") == "EN":
+		$start_game_container/back_start_game_btn.text = "Back";
+		$start_game_container/new_game_start_game_btn.text = "New Game";
+		$start_game_container/empty_start_game_label.text = "Empty";
+	elif game_configurations.get_setting("language", "game_lang") == "PT":
+		$start_game_container/back_start_game_btn.text = "Voltar";
+		$start_game_container/new_game_start_game_btn.text = "Novo Jogo";
+		$start_game_container/empty_start_game_label.text = "Vazio";
 # Sound to Play:
 func play_sfx_menu_btn_sound():
 	if !game_configurations.get_setting("audio", "isSFXBlocked"):
@@ -98,8 +111,10 @@ func _on_option_btn_pressed():
 
 func _on_start_game_btn_pressed():
 	play_sfx_menu_btn_sound();
-	# Opens a window with saved game:
-	# Case there's no save game we need to create one:
+	# Hides buttons_container:
+	$buttons_container.hide();
+	# Shows start_game_container:
+	$start_game_container.show();
 
 
 func _on_bird_timer_timeout():
@@ -238,3 +253,15 @@ func _on_fullscreen_option_btn_ready():
 # Listener to when btn_click_sound finishes:
 func _on_btn_click_sound_finished():
 	$btn_click_sound.stop();
+
+# Listener to Back Button on start_game_container:
+func _on_back_start_game_btn_pressed():
+	play_sfx_menu_btn_sound();
+	# Hides start_game_container:
+	$start_game_container.hide();
+	# Shows buttons_container:
+	$buttons_container.show();
+
+# Listener to add a new game save:
+func _on_new_game_start_game_btn_pressed():
+	play_sfx_menu_btn_sound();
