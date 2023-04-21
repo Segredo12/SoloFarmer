@@ -13,11 +13,12 @@ config_version=5
 config/name="Solo Farmer"
 run/main_scene="res://scenes/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
 GameConfigurations="*res://files/classes/game_configurations.gd"
+Player="*res://files/classes/player.gd"
 
 [display]
 

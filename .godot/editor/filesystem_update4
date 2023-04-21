@@ -1,2 +1,6 @@
 res://scenes/main_menu/main_menu.tscn
 res://scenes/main_menu/script/main_menu_script.gd
+res://files/classes/player.gd
+res://files/player_data.json
+res://files/classes/game_configurations.gd
+res://scenes/house/house.tscn

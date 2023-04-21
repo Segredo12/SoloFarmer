@@ -149,6 +149,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_oh33w")
 text = "New Game"
 
 [node name="empty_start_game_label" type="Label" parent="start_game_container"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 142.0
 offset_right = 192.0
@@ -187,6 +188,7 @@ offset_bottom = 173.0
 max_length = 12
 
 [node name="name_start_game_label" type="Label" parent="start_game_container"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 142.0
 offset_right = 155.0
@@ -194,6 +196,58 @@ offset_bottom = 174.0
 text = "Player Name:"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="player_name_start_game_label" type="Label" parent="start_game_container"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 113.0
+offset_right = 288.0
+offset_bottom = 139.0
+text = "placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play_game_start_game_btn" type="Button" parent="start_game_container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -143.0
+offset_right = 32.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_ny0tq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pxk7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6v7vh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oh33w")
+text = "Play"
+
+[node name="delete_player_start_game_btn" type="Button" parent="start_game_container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 65.0
+offset_top = -208.0
+offset_right = 129.0
+offset_bottom = -177.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_ny0tq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pxk7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6v7vh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oh33w")
+text = "delete"
 
 [node name="buttons_container" type="Control" parent="."]
 z_index = 1
@@ -500,8 +554,21 @@ volume_db = -5.0
 stream = ExtResource("9_2yfjj")
 autoplay = true
 
+[node name="copyright" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 563.0
+offset_right = 216.0
+offset_bottom = 589.0
+text = "© 2023 - Segredo | All Rights Reserved"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="start_game_container/back_start_game_btn" to="." method="_on_back_start_game_btn_pressed"]
 [connection signal="pressed" from="start_game_container/new_game_start_game_btn" to="." method="_on_new_game_start_game_btn_pressed"]
+[connection signal="pressed" from="start_game_container/confirm_name_start_game_btn" to="." method="_on_confirm_name_start_game_btn_pressed"]
+[connection signal="pressed" from="start_game_container/play_game_start_game_btn" to="." method="_on_play_game_start_game_btn_pressed"]
+[connection signal="pressed" from="start_game_container/delete_player_start_game_btn" to="." method="_on_delete_player_start_game_btn_pressed"]
 [connection signal="pressed" from="buttons_container/start_game_btn" to="." method="_on_start_game_btn_pressed"]
 [connection signal="pressed" from="buttons_container/option_btn" to="." method="_on_option_btn_pressed"]
 [connection signal="pressed" from="buttons_container/quit_game_btn" to="." method="_on_quit_game_btn_pressed"]
@@ -514,7 +581,7 @@ autoplay = true
 [connection signal="timeout" from="bird_timer" to="." method="_on_bird_timer_timeout"]
 [connection signal="timeout" from="bird_spawn_timer_01" to="." method="_on_bird_timer_timeout"]
 [connection signal="timeout" from="bird_spawn_timer_01" to="." method="_on_bird_spawn_timer_01_timeout"]
-[connection signal="timeout" from="bird_spawn_timer_02" to="." method="_on_bird_timer_timeout"]
 [connection signal="timeout" from="bird_spawn_timer_02" to="." method="_on_bird_spawn_timer_02_timeout"]
+[connection signal="timeout" from="bird_spawn_timer_02" to="." method="_on_bird_timer_timeout"]
 [connection signal="finished" from="btn_click_sound" to="." method="_on_btn_click_sound_finished"]
 [connection signal="finished" from="background_sound" to="." method="_on_background_sound_finished"]
