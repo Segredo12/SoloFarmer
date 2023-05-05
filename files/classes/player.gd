@@ -3,13 +3,20 @@ extends Node
 # Creates File Path to files Folder:
 const FILE_PATH = "res://files";
 # Creates File Name with the File Path:
-const FILE_NAME = FILE_PATH + "/player_data.json";
+const FILE_NAME = FILE_PATH + "/player_data.data";
 # Creates a File Password to use as encryption: (NOT SECURE)
 const FILE_PWD = "soloFarming123";
 # Creating a default player information (JSON):
 var player_data = {
 	"name": "placeholder",
-	"playable": false
+	"playable": false,
+	"uncut_emeralds": 0,
+	"uncut_saphires": 0,
+	"cut_emeralds": 0,
+	"cut_saphires": 0,
+	"wood_logs": 0,
+	"wood_planks": 0,
+	"gold_coins": 0
 };
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,11 +58,18 @@ func init_player_file():
 
 # Getter to get information about player:
 func get_player():
-	print("User requested player_data: ", JSON.stringify(player_data));
 	return player_data;
 # Setter to set information about player:
 func set_player(new_player_data):
 	print("User requested a new save to player_data..");
-	print("New player_data: " , JSON.stringify(new_player_data));
 	player_data = new_player_data;
 	save();
+# Function used to reset resources:
+func reset_resources():
+	player_data["uncut_emeralds"] = 0;
+	player_data["uncut_saphires"] = 0;
+	player_data["cut_saphires"] = 0;
+	player_data["cut_emeralds"] = 0;
+	player_data["wood_logs"] = 0;
+	player_data["wood_planks"] = 0;
+	player_data["gold_coins"] = 0;

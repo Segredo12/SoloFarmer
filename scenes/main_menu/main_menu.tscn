@@ -581,7 +581,7 @@ vertical_alignment = 1
 [connection signal="timeout" from="bird_timer" to="." method="_on_bird_timer_timeout"]
 [connection signal="timeout" from="bird_spawn_timer_01" to="." method="_on_bird_timer_timeout"]
 [connection signal="timeout" from="bird_spawn_timer_01" to="." method="_on_bird_spawn_timer_01_timeout"]
-[connection signal="timeout" from="bird_spawn_timer_02" to="." method="_on_bird_spawn_timer_02_timeout"]
 [connection signal="timeout" from="bird_spawn_timer_02" to="." method="_on_bird_timer_timeout"]
+[connection signal="timeout" from="bird_spawn_timer_02" to="." method="_on_bird_spawn_timer_02_timeout"]
 [connection signal="finished" from="btn_click_sound" to="." method="_on_btn_click_sound_finished"]
 [connection signal="finished" from="background_sound" to="." method="_on_background_sound_finished"]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjmhad23dmthu"]
+
+[ext_resource type="Texture2D" uid="uid://drqau7s5xw5eg" path="res://assets/player/idle_front/idle_front_1.png" id="1_3eamd"]
+[ext_resource type="Script" path="res://scenes/player/script/player.gd" id="1_3hl7t"]
+[ext_resource type="Texture2D" uid="uid://bf8jukfhdp3k" path="res://assets/player/idle_front/idle_front_2.png" id="2_2ynp4"]
+[ext_resource type="Texture2D" uid="uid://b8dwvtwxwocuo" path="res://assets/player/move_sideways/move_sideways_1.png" id="3_rk174"]
+[ext_resource type="Texture2D" uid="uid://bneu0k8tv1bk0" path="res://assets/player/move_sideways/move_sideways_2.png" id="4_2fwmu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_apoli"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3eamd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2ynp4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rk174")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2fwmu")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p27ig"]
+radius = 8.0
+height = 16.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_kk5sa"]
+font_size = 10
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(192, 128)
+script = ExtResource("1_3hl7t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 4)
+sprite_frames = SubResource("SpriteFrames_apoli")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_p27ig")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[node name="emerald_information_msg" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.5
+offset_top = -17.0
+offset_right = 28.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Placeholder"
+label_settings = SubResource("LabelSettings_kk5sa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="saphire_information_msg" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.5
+offset_top = -17.0
+offset_right = 28.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Placeholder"
+label_settings = SubResource("LabelSettings_kk5sa")
+horizontal_alignment = 1
+vertical_alignment = 1

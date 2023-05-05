@@ -352,6 +352,7 @@ func _on_delete_player_start_game_btn_pressed():
 	var player_info = player_class.get_player(); # Getting Player information:
 	player_info["playable"] = false; # Puts player off playing mode;
 	player_info["name"] = ""; # Removes old name;
+	player_class.reset_resources();
 	player_class.set_player(player_info);
 	# Now we show content to the start_game container:
 	show_start_game_container_content();
@@ -361,3 +362,5 @@ func _on_play_game_start_game_btn_pressed():
 	play_sfx_menu_btn_sound();
 	# Now we change to the gameplay scene:
 	# TODO: Create a scene inside a house.
+	# DEBUG: We're going to change to World while house not builded:
+	get_tree().change_scene_to_file("res://scenes/world/world.tscn");
