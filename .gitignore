@@ -1,2 +1,4 @@
 
 .godot/.gdignore
+files/player_data.json
+files/config.cfg
