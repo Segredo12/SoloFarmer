@@ -5,6 +5,8 @@ extends StaticBody2D
 # Ore Respawn timer:
 @export var respawn_timer = 5;
 
+var game_state; # Game_State Class File:
+
 # Boolean is ore depleted:
 var is_depleted = false;
 # Read player class:
@@ -12,7 +14,10 @@ var player_class;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# TODO: Needs to load game values and add to quantity;
+	# Reads Game State File:
+	game_state = get_node("/root/GameState");
+	# Reads file quantity:
+	quantity = game_state.get_content("minerals", "emerald");
 	# Starts the game with the correct sprite:
 	show_correct_quantity_sprite_emerald();
 	# Reads Player Class:
@@ -23,7 +28,7 @@ func _ready():
 func _process(delta):
 	show_correct_quantity_sprite_emerald();
 	if (!is_depleted):
-		if ($"../player".position.x >= -915 && $"../player".position.x <= -910
+		if ($"../player".position.x >= -920 && $"../player".position.x <= -910
 			&& $"../player".position.y >= 730 && $"../player".position.y <= 740):
 			# Shows Message to interact with the rock:
 			$"../player".get_node("emerald_information_msg").text = "Interact with the Emerald using 'E'.";
@@ -37,6 +42,8 @@ func _process(delta):
 					var player = player_class.get_player();
 					# Removes one ore from the mine;
 					quantity -= 1;
+					# Removes one from config file:
+					game_state.set_content("minerals", "emerald", quantity);
 					# Inserts uncut_emeralds onto player:
 					player["uncut_emeralds"] = player["uncut_emeralds"] + 1;
 					print("Removed one from quantity: ", quantity);
@@ -48,7 +55,7 @@ func _process(delta):
 		# Removes Player information msg:
 		if ($"../player".get_node("emerald_information_msg").is_visible()):
 			$"../player".get_node("emerald_information_msg").hide();
-		if ($respawn_timer.is_stopped()):
+		if ($respawn_timer.is_stopped() && is_depleted):
 			# Await (seconds) to respawn rock:
 			$respawn_timer.start(respawn_timer);
 

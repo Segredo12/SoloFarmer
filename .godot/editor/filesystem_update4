@@ -1,10 +1,8 @@
-res://scenes/world/world.tscn
 res://scenes/main_menu/main_menu.tscn
+res://scenes/world/world.tscn
 res://scenes/player/player.tscn
-res://scenes/world/script/saphire_ore.gd
-res://scenes/world/script/emerald_ore.gd
-res://scenes/player/script/player.gd
 res://scenes/hud/in_game_hud.tscn
-res://scenes/world/script/world.gd
-res://files/classes/player.gd
+res://scenes/world/script/emerald_ore.gd
+res://scenes/world/script/saphire_ore.gd
+res://files/classes/game_state.gd
 res://scenes/main_menu/script/main_menu_script.gd

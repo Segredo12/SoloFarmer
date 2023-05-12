@@ -9,10 +9,15 @@ extends StaticBody2D
 var is_depleted = false;
 # Read player class:
 var player_class;
+# Game_State Class File:
+var game_state; 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# TODO: Needs to load game values and add to quantity;
+	# Reads Game State File:
+	game_state = get_node("/root/GameState");
+	# Reads file quantity:
+	quantity = game_state.get_content("minerals", "saphire");
 	# Starts the game with the correct sprite:
 	show_correct_quantity_sprite_saphire();
 	# Reads Player Class:
@@ -37,6 +42,8 @@ func _process(delta):
 					var player = player_class.get_player();
 					# Removes one ore from the mine;
 					quantity -= 1;
+					# Removes one from config file:
+					game_state.set_content("minerals", "saphire", quantity);
 					# Inserts uncut_saphires onto player:
 					player["uncut_saphires"] = player["uncut_saphires"] + 1;
 					print("Removed one from quantity: ", quantity);
@@ -48,7 +55,7 @@ func _process(delta):
 		# Removes Player information msg:
 		if ($"../player".get_node("saphire_information_msg").is_visible()):
 			$"../player".get_node("saphire_information_msg").hide();
-		if ($respawn_timer.is_stopped()):
+		if ($respawn_timer.is_stopped() && is_depleted):
 			# Await (seconds) to respawn rock:
 			$respawn_timer.start(respawn_timer);
 

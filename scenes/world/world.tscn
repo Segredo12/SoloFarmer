@@ -1400,22 +1400,18 @@ texture = ExtResource("28_4frfk")
 
 [node name="emerald_sprite_04" type="Sprite2D" parent="emerald_ore_01"]
 position = Vector2(0, 18.75)
-scale = Vector2(1, 1)
 texture = ExtResource("30_i3iiw")
 
 [node name="emerald_sprite_03" type="Sprite2D" parent="emerald_ore_01"]
 position = Vector2(6.25, 28.75)
-scale = Vector2(1, 1)
 texture = ExtResource("31_ek11u")
 
 [node name="emerald_sprite_02" type="Sprite2D" parent="emerald_ore_01"]
 position = Vector2(8.75, 42.5)
-scale = Vector2(1, 1)
 texture = ExtResource("32_huik4")
 
 [node name="emerald_sprite_01" type="Sprite2D" parent="emerald_ore_01"]
 position = Vector2(3.75, 48.75)
-scale = Vector2(1, 1)
 texture = ExtResource("33_vmyek")
 
 [node name="collision" type="CollisionShape2D" parent="emerald_ore_01"]
@@ -1423,6 +1419,7 @@ position = Vector2(72, 24)
 shape = SubResource("RectangleShape2D_py5kp")
 
 [node name="respawn_timer" type="Timer" parent="emerald_ore_01"]
+one_shot = true
 
 [node name="saphire_ore_01" type="StaticBody2D" parent="."]
 z_index = -1
@@ -1438,30 +1435,26 @@ texture = ExtResource("29_x4wo6")
 
 [node name="saphire_sprite_04" type="Sprite2D" parent="saphire_ore_01"]
 position = Vector2(0, 10)
-scale = Vector2(1, 1)
 texture = ExtResource("32_5vqak")
 
 [node name="saphire_sprite_03" type="Sprite2D" parent="saphire_ore_01"]
 position = Vector2(0, 21.25)
-scale = Vector2(1, 1)
 texture = ExtResource("33_jyp8p")
 
 [node name="saphire_sprite_02" type="Sprite2D" parent="saphire_ore_01"]
 position = Vector2(0, 31.25)
-scale = Vector2(1, 1)
 texture = ExtResource("34_f52sg")
 
 [node name="saphire_sprite_01" type="Sprite2D" parent="saphire_ore_01"]
 position = Vector2(0, 42.5)
-scale = Vector2(1, 1)
 texture = ExtResource("35_8uw22")
 
 [node name="collision" type="CollisionShape2D" parent="saphire_ore_01"]
 position = Vector2(60, 20)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_001l2")
 
 [node name="respawn_timer" type="Timer" parent="saphire_ore_01"]
+one_shot = true
 
 [node name="in_game_hud" parent="." instance=ExtResource("40_xubdj")]
 offset_left = 216.0

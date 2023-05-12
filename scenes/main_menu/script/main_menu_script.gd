@@ -3,6 +3,7 @@ extends Node
 # Variables:
 var game_configurations; # Game_Configurations Class File:
 var player_class; # Player Class File:
+var game_state; # Game_State Class File:
 var isLangChanged = false;
 var isToCreateGameplay = false;
 
@@ -12,6 +13,8 @@ func _ready():
 	game_configurations = get_node("/root/GameConfigurations");
 	# Reads Player Class:
 	player_class = get_node("/root/Player");
+	# Reads Game State File:
+	game_state = get_node("/root/GameState");
 	# Listeners on _Ready():
 	_on_pt_option_lang_btn_ready();
 	_on_en_option_lang_btn_ready();
