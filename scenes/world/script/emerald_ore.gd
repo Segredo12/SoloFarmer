@@ -102,4 +102,6 @@ func show_correct_quantity_sprite_emerald():
 func _on_respawn_timer_timeout():
 	is_depleted = false;
 	quantity = 5;
+	# Restores quantity to the file:
+	game_state.set_content("minerals", "saphire", quantity);
 	print("Emerald ore restored..");
