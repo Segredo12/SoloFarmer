@@ -6,6 +6,7 @@ var player_class; # Player Class File:
 func _ready():
 	# Reads Player Class:
 	player_class = get_node("/root/Player");
+	$house/chimney_smoke.play("idle");
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -13,3 +14,4 @@ func _process(delta):
 	if ($player.position.x >= 330 && $player.position.x <= 360
 		&& $player.position.y >= 485 && $player.position.y <= 500):
 		# TODO: Enter the building..
+		pass

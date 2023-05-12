@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjmhad23dmthu"]
+[gd_scene load_steps=20 format=3 uid="uid://bjmhad23dmthu"]
 
 [ext_resource type="Texture2D" uid="uid://drqau7s5xw5eg" path="res://assets/player/idle_front/idle_front_1.png" id="1_3eamd"]
 [ext_resource type="Script" path="res://scenes/player/script/player.gd" id="1_3hl7t"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://csrbw7yb6tflv" path="res://assets/main_menu/main_menu_container.png" id="6_w5y4j"]
 [ext_resource type="Texture2D" uid="uid://b45rk71ch1rt3" path="res://assets/hud/resources/uncut_emerald.png" id="7_8lfwd"]
 [ext_resource type="Texture2D" uid="uid://c66fvjesh3ruc" path="res://assets/hud/resources/uncut_saphire.png" id="8_qiakl"]
+[ext_resource type="Texture2D" uid="uid://bgb2vu1a3ppdv" path="res://assets/hud/icons/gear.png" id="9_yx2gf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_apoli"]
 animations = [{
@@ -40,6 +41,17 @@ height = 16.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_kk5sa"]
 font_size = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ktkrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_npjxl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j24ct"]
+
+[sub_resource type="Theme" id="Theme_44fno"]
+Button/styles/hover = SubResource("StyleBoxEmpty_ktkrc")
+Button/styles/normal = SubResource("StyleBoxEmpty_npjxl")
+Button/styles/pressed = SubResource("StyleBoxEmpty_j24ct")
 
 [sub_resource type="Theme" id="Theme_316yx"]
 
@@ -100,6 +112,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="exit_window" type="Window" parent="."]
+transparent_bg = true
+handle_input_locally = false
+position = Vector2i(15, 15)
+size = Vector2i(32, 30)
+unresizable = true
+borderless = true
+always_on_top = true
+
+[node name="exit_window" type="Button" parent="exit_window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_44fno")
+icon = ExtResource("9_yx2gf")
+
 [node name="resources_window" type="Window" parent="."]
 transparent_bg = true
 gui_disable_input = true
@@ -151,3 +181,5 @@ text = "9999"
 label_settings = SubResource("LabelSettings_bq4wk")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="exit_window/exit_window" to="." method="_on_exit_window_pressed"]

@@ -67,3 +67,8 @@ func update_resources_labels():
 	#$resources_window.get_node("resources_container").get_node("wood_logs_label").text = str(wood_logs);
 	#$resources_window.get_node("resources_container").get_node("wood_planks_label").text = str(wood_planks);
 	#$resources_window.get_node("resources_container").get_node("gold_coins_label").text = str(gold_coins);
+
+# Function that will return to main menu:
+func _on_exit_window_pressed():
+	# Goes to Main Menu Window:
+	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn");

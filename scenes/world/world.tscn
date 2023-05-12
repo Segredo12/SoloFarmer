@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://c1wi2qvq5vjan"]
+[gd_scene load_steps=77 format=3 uid="uid://c1wi2qvq5vjan"]
 
 [ext_resource type="Texture2D" uid="uid://cxdcnbnpofhc5" path="res://assets/world/background/background_plains.png" id="1_crbkt"]
 [ext_resource type="Script" path="res://scenes/world/script/world.gd" id="1_o75qt"]
@@ -27,19 +27,46 @@
 [ext_resource type="Texture2D" uid="uid://dxc7de4u6t3p2" path="res://assets/world/house/Ladder_02.png" id="18_3yl1i"]
 [ext_resource type="PackedScene" uid="uid://bjmhad23dmthu" path="res://scenes/player/player.tscn" id="19_eui7e"]
 [ext_resource type="Texture2D" uid="uid://mf0663padi7d" path="res://assets/world/house/Wall_C_01.png" id="26_4puwn"]
+[ext_resource type="Texture2D" uid="uid://kpl0u0ayr13j" path="res://assets/house/smoke/spritesheet_smoke_whisp_0.png" id="26_yuu3v"]
+[ext_resource type="Texture2D" uid="uid://d0gwx5c5nft6j" path="res://assets/house/smoke/spritesheet_smoke_whisp_1.png" id="27_4tnry"]
 [ext_resource type="Texture2D" uid="uid://dtg50tfxnc11i" path="res://assets/world/house/Wall_C_03.png" id="27_8n0un"]
+[ext_resource type="Texture2D" uid="uid://b8ite6w3mj4ta" path="res://assets/house/smoke/spritesheet_smoke_whisp_2.png" id="28_3ifww"]
 [ext_resource type="Texture2D" uid="uid://br6x1d8a2x8kt" path="res://assets/world/mine/emerald/emerald_01.png" id="28_4frfk"]
 [ext_resource type="Script" path="res://scenes/world/script/emerald_ore.gd" id="28_pjpcp"]
+[ext_resource type="Texture2D" uid="uid://0gw1vsfcu1sg" path="res://assets/house/smoke/spritesheet_smoke_whisp_3.png" id="29_ka2n4"]
 [ext_resource type="Texture2D" uid="uid://bg0wrvv3mjkk2" path="res://assets/world/mine/saphire/saphire_01.png" id="29_x4wo6"]
+[ext_resource type="Texture2D" uid="uid://dou2cpfxrt6vt" path="res://assets/house/smoke/spritesheet_smoke_whisp_4.png" id="30_3cjoq"]
 [ext_resource type="Script" path="res://scenes/world/script/saphire_ore.gd" id="30_5pq7v"]
 [ext_resource type="Texture2D" uid="uid://bomfcpwrq3lrn" path="res://assets/world/mine/emerald/emerald_02.png" id="30_i3iiw"]
 [ext_resource type="Texture2D" uid="uid://dcxm1q7oj7wi2" path="res://assets/world/mine/emerald/emerald_03.png" id="31_ek11u"]
+[ext_resource type="Texture2D" uid="uid://bujm2msl3y0lh" path="res://assets/house/smoke/spritesheet_smoke_whisp_5.png" id="31_jnc6h"]
 [ext_resource type="Texture2D" uid="uid://x7bwgtvqk74w" path="res://assets/world/mine/saphire/saphire_02.png" id="32_5vqak"]
+[ext_resource type="Texture2D" uid="uid://csrdycb54ysw7" path="res://assets/house/smoke/spritesheet_smoke_whisp_6.png" id="32_gv0ry"]
 [ext_resource type="Texture2D" uid="uid://ekw0fjhlqpc0" path="res://assets/world/mine/emerald/emerald_04.png" id="32_huik4"]
 [ext_resource type="Texture2D" uid="uid://ced3yfc41rwf2" path="res://assets/world/mine/saphire/saphire_03.png" id="33_jyp8p"]
+[ext_resource type="Texture2D" uid="uid://01liygp7mqky" path="res://assets/house/smoke/spritesheet_smoke_whisp_7.png" id="33_vm1wq"]
 [ext_resource type="Texture2D" uid="uid://bjddkvisv5bjx" path="res://assets/world/mine/emerald/emerald_05.png" id="33_vmyek"]
 [ext_resource type="Texture2D" uid="uid://dkbxkscqcqvbc" path="res://assets/world/mine/saphire/saphire_04.png" id="34_f52sg"]
+[ext_resource type="Texture2D" uid="uid://b2uhmqbhy47fv" path="res://assets/house/smoke/spritesheet_smoke_whisp_8.png" id="34_r25jr"]
+[ext_resource type="Texture2D" uid="uid://ck8ij788qs72n" path="res://assets/house/smoke/spritesheet_smoke_whisp_9.png" id="35_6sgqf"]
 [ext_resource type="Texture2D" uid="uid://owrjge0qhkn5" path="res://assets/world/mine/saphire/saphire_05.png" id="35_8uw22"]
+[ext_resource type="Texture2D" uid="uid://bsuhljmgvfce1" path="res://assets/house/smoke/spritesheet_smoke_whisp_10.png" id="36_r7bmu"]
+[ext_resource type="Texture2D" uid="uid://kdgjgulqfyw4" path="res://assets/house/smoke/spritesheet_smoke_whisp_11.png" id="37_36fgp"]
+[ext_resource type="Texture2D" uid="uid://dkt7jts2japos" path="res://assets/house/smoke/spritesheet_smoke_whisp_12.png" id="38_5bso1"]
+[ext_resource type="Texture2D" uid="uid://bc33kfnn81x3" path="res://assets/house/smoke/spritesheet_smoke_whisp_13.png" id="39_3v4wr"]
+[ext_resource type="Texture2D" uid="uid://doiv3d3sybjbv" path="res://assets/house/smoke/spritesheet_smoke_whisp_14.png" id="40_wjvk2"]
+[ext_resource type="Texture2D" uid="uid://b4nli04dbthgf" path="res://assets/house/smoke/spritesheet_smoke_whisp_15.png" id="41_tioxi"]
+[ext_resource type="Texture2D" uid="uid://dmeo8dy0wn24n" path="res://assets/house/smoke/spritesheet_smoke_whisp_16.png" id="42_h5qmg"]
+[ext_resource type="Texture2D" uid="uid://cys34vl6mkase" path="res://assets/house/smoke/spritesheet_smoke_whisp_17.png" id="43_hq62f"]
+[ext_resource type="Texture2D" uid="uid://dgcb1k4rtfq47" path="res://assets/house/smoke/spritesheet_smoke_whisp_18.png" id="44_lmjy8"]
+[ext_resource type="Texture2D" uid="uid://63cpsr0loh25" path="res://assets/house/smoke/spritesheet_smoke_whisp_19.png" id="45_fktcc"]
+[ext_resource type="Texture2D" uid="uid://b7k0dlwosq1eh" path="res://assets/house/smoke/spritesheet_smoke_whisp_20.png" id="46_x71b3"]
+[ext_resource type="Texture2D" uid="uid://4rbmn0tgulct" path="res://assets/house/smoke/spritesheet_smoke_whisp_21.png" id="47_641h2"]
+[ext_resource type="Texture2D" uid="uid://5wrvar4g6lf" path="res://assets/house/smoke/spritesheet_smoke_whisp_22.png" id="48_pcweb"]
+[ext_resource type="Texture2D" uid="uid://dfo5tx0xlrvey" path="res://assets/house/smoke/spritesheet_smoke_whisp_23.png" id="49_q0o76"]
+[ext_resource type="Texture2D" uid="uid://dd1623kinqi14" path="res://assets/house/smoke/spritesheet_smoke_whisp_24.png" id="50_ecukn"]
+[ext_resource type="Texture2D" uid="uid://blqsos3djvyc0" path="res://assets/house/smoke/spritesheet_smoke_whisp_25.png" id="51_e066h"]
+[ext_resource type="Texture2D" uid="uid://c0c7mrlkb5h52" path="res://assets/house/smoke/spritesheet_smoke_whisp_26.png" id="52_y4k7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pq5rd"]
 size = Vector2(128, 128)
@@ -58,6 +85,95 @@ b = Vector2(-64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp06d"]
 size = Vector2(117, 237)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sgda3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_yuu3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4tnry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3ifww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ka2n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_3cjoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_jnc6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_gv0ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_vm1wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r25jr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_6sgqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_r7bmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_36fgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_5bso1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_3v4wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_wjvk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_tioxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_h5qmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_hq62f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_lmjy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_fktcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_x71b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_641h2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_pcweb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_q0o76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_ecukn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_e066h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_y4k7p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_py36t"]
 size = Vector2(128, 304)
@@ -1350,6 +1466,14 @@ texture = ExtResource("18_3yl1i")
 [node name="doorway_collision" type="CollisionShape2D" parent="house"]
 position = Vector2(53.5, 249.5)
 shape = SubResource("RectangleShape2D_dp06d")
+
+[node name="chimney_smoke" type="AnimatedSprite2D" parent="house"]
+z_index = -1
+position = Vector2(640, -200)
+scale = Vector2(0.722222, 0.533333)
+sprite_frames = SubResource("SpriteFrames_sgda3")
+animation = &"idle"
+speed_scale = 1.5
 
 [node name="player" parent="." instance=ExtResource("19_eui7e")]
 position = Vector2(288, 504)
