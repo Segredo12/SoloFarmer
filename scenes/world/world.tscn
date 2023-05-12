@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://c1wi2qvq5vjan"]
+[gd_scene load_steps=49 format=3 uid="uid://c1wi2qvq5vjan"]
 
 [ext_resource type="Texture2D" uid="uid://cxdcnbnpofhc5" path="res://assets/world/background/background_plains.png" id="1_crbkt"]
 [ext_resource type="Script" path="res://scenes/world/script/world.gd" id="1_o75qt"]
@@ -40,7 +40,6 @@
 [ext_resource type="Texture2D" uid="uid://bjddkvisv5bjx" path="res://assets/world/mine/emerald/emerald_05.png" id="33_vmyek"]
 [ext_resource type="Texture2D" uid="uid://dkbxkscqcqvbc" path="res://assets/world/mine/saphire/saphire_04.png" id="34_f52sg"]
 [ext_resource type="Texture2D" uid="uid://owrjge0qhkn5" path="res://assets/world/mine/saphire/saphire_05.png" id="35_8uw22"]
-[ext_resource type="PackedScene" uid="uid://kmxdgbvt317" path="res://scenes/hud/in_game_hud.tscn" id="40_xubdj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pq5rd"]
 size = Vector2(128, 128)
@@ -1455,12 +1454,6 @@ shape = SubResource("RectangleShape2D_001l2")
 
 [node name="respawn_timer" type="Timer" parent="saphire_ore_01"]
 one_shot = true
-
-[node name="in_game_hud" parent="." instance=ExtResource("40_xubdj")]
-offset_left = 216.0
-offset_top = 456.0
-offset_right = 576.0
-offset_bottom = 816.0
 
 [connection signal="timeout" from="emerald_ore_01/respawn_timer" to="emerald_ore_01" method="_on_respawn_timer_timeout"]
 [connection signal="timeout" from="saphire_ore_01/respawn_timer" to="saphire_ore_01" method="_on_respawn_timer_timeout"]

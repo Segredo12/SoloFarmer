@@ -6,3 +6,5 @@ res://scenes/world/script/emerald_ore.gd
 res://scenes/world/script/saphire_ore.gd
 res://files/classes/game_state.gd
 res://scenes/main_menu/script/main_menu_script.gd
+res://scenes/player/script/player.gd
+res://scenes/world/script/world.gd
